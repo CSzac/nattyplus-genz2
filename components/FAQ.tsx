@@ -36,7 +36,7 @@ export default function FAQ() {
     <section
       id="faq"
       style={{
-        background: "#272626",
+        background: "#0d0d0f",
         padding: "96px 24px",
         borderTop: "1px solid rgba(255,255,255,0.05)",
       }}
@@ -64,7 +64,7 @@ export default function FAQ() {
               <div
                 key={i}
                 style={{
-                  background: "#1e1e1e",
+                  background: "#111113",
                   border: `1px solid ${isOpen ? "rgba(255,126,0,0.3)" : "rgba(255,255,255,0.06)"}`,
                   borderRadius: 10,
                   overflow: "hidden",
@@ -100,7 +100,7 @@ export default function FAQ() {
                   </span>
                   <span
                     style={{
-                      color: "#ff7e00",
+                      color: "#f59e0b",
                       fontSize: "1.2rem",
                       fontWeight: 700,
                       flexShrink: 0,

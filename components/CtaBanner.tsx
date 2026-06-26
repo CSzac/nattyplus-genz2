@@ -70,12 +70,12 @@ export default function CtaBanner() {
           }}
         >
           <a
-            href="#shop"
+            href="https://nattyplussupps.com/products/ultimate-testosterone-booster" target="_blank" rel="noopener noreferrer"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: "#272626",
+              background: "#0d0d0f",
               color: "#ffffff",
               fontFamily: "Montserrat, sans-serif",
               fontWeight: 800,

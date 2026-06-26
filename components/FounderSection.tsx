@@ -4,7 +4,7 @@ export default function FounderSection() {
   return (
     <section
       style={{
-        background: "#1e1e1e",
+        background: "#111113",
         padding: "96px 24px",
         borderTop: "1px solid rgba(255,255,255,0.05)",
       }}
@@ -70,7 +70,7 @@ export default function FounderSection() {
           >
             built by someone
             <br />
-            <span style={{ color: "#ff7e00" }}>who was you</span>
+            <span style={{ color: "#f59e0b" }}>who was you</span>
           </h2>
 
           <div

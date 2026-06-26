@@ -1,18 +1,20 @@
 import Image from "next/image";
 
+const PRODUCT_URL = "https://nattyplussupps.com/products/ultimate-testosterone-booster";
+
 export default function Hero() {
   return (
     <section
       style={{
         minHeight: "100dvh",
-        background: "#272626",
+        background: "#0d0d0f",
         position: "relative",
         display: "flex",
         alignItems: "center",
         overflow: "hidden",
       }}
     >
-      {/* Background pattern */}
+      {/* Background pattern — matches brand */}
       <div
         style={{
           position: "absolute",
@@ -20,22 +22,21 @@ export default function Hero() {
           backgroundImage: "url(/Pattern-2.png)",
           backgroundSize: "400px",
           backgroundRepeat: "repeat",
-          opacity: 0.04,
+          opacity: 0.05,
           zIndex: 0,
         }}
       />
 
-      {/* Orange gradient glow */}
+      {/* Subtle glow */}
       <div
         style={{
           position: "absolute",
-          top: "-20%",
-          right: "-10%",
-          width: 800,
-          height: 800,
+          top: "-10%",
+          right: "-5%",
+          width: 700,
+          height: 700,
           borderRadius: "50%",
-          background:
-            "radial-gradient(circle, rgba(255,126,0,0.18) 0%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%)",
           zIndex: 0,
         }}
       />
@@ -57,9 +58,14 @@ export default function Hero() {
       >
         {/* Left: Copy */}
         <div>
-          <span className="section-label animate-fade-up">
-            #1 Testosterone Support Formula
-          </span>
+          {/* Badges row */}
+          <div
+            className="animate-fade-up"
+            style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 20 }}
+          >
+            <span className="badge-gold">Over 5,000+ Sold</span>
+            <span className="badge-outline">152 Reviews · 99% Five Star</span>
+          </div>
 
           <h1
             className="animate-fade-up delay-100"
@@ -74,7 +80,7 @@ export default function Hero() {
           >
             Bro, your T
             <br />
-            <span style={{ color: "#ff7e00" }}>is cooked.</span>
+            <span style={{ color: "#f59e0b" }}>is cooked.</span>
             <br />
             Let&apos;s fix that.
           </h1>
@@ -82,45 +88,31 @@ export default function Hero() {
           <p
             className="animate-fade-up delay-200"
             style={{
-              fontSize: "1.1rem",
-              lineHeight: 1.7,
-              color: "rgba(255,255,255,0.7)",
+              fontSize: "1rem",
+              lineHeight: 1.75,
+              color: "rgba(255,255,255,0.6)",
               maxWidth: 480,
               marginBottom: 36,
             }}
           >
             Low drive. No energy. Feeling like a background character in your
-            own life? NattyPLUS is the clinically-dosed stack that actually
-            moves the needle — no fluff, no prop blends, no BS.
+            own life? The Ultimate Testosterone Booster is a 10-ingredient,
+            clinical-grade stack that actually moves the needle — no fluff,
+            no prop blends, no BS.
           </p>
 
-          {/* Stars + reviews */}
+          {/* Stars */}
           <div
             className="animate-fade-up delay-200"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              marginBottom: 32,
-            }}
+            style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 32 }}
           >
             <div style={{ display: "flex", gap: 2 }}>
-              {Array(5)
-                .fill(0)
-                .map((_, i) => (
-                  <span key={i} className="star">
-                    ★
-                  </span>
-                ))}
+              {Array(5).fill(0).map((_, i) => (
+                <span key={i} className="star">★</span>
+              ))}
             </div>
-            <span
-              style={{
-                fontSize: "0.85rem",
-                color: "rgba(255,255,255,0.6)",
-                fontWeight: 600,
-              }}
-            >
-              4.9/5 · 2,400+ reviews
+            <span style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.5)", fontFamily: "monospace", fontWeight: 600 }}>
+              4.9 · 152 verified reviews
             </span>
           </div>
 
@@ -128,37 +120,34 @@ export default function Hero() {
             className="animate-fade-up delay-300"
             style={{ display: "flex", flexWrap: "wrap", gap: 12 }}
           >
-            <a href="#shop" className="btn-primary animate-pulse-glow">
-              Get Your T Back →
+            <a href={PRODUCT_URL} className="btn-primary" target="_blank" rel="noopener noreferrer">
+              Get Your T Back
+              <span className="btn-arrow">→</span>
             </a>
             <a href="#how-it-works" className="btn-outline">
               See How It Works
             </a>
           </div>
 
-          {/* Trust badges */}
+          {/* Trust micro-copy */}
           <div
             className="animate-fade-up delay-400"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 20,
-              marginTop: 36,
-            }}
+            style={{ display: "flex", flexWrap: "wrap", gap: 20, marginTop: 32 }}
           >
             {[
-              "🧪 Clinically Dosed",
+              "✓ 30-Day Results Guarantee",
               "✓ GMP Certified",
-              "🇺🇸 Made in USA",
-              "📦 Free Shipping $80+",
+              "✓ Clinically Dosed",
+              "✓ Free Shipping $200+",
             ].map((badge) => (
               <span
                 key={badge}
                 style={{
-                  fontSize: "0.75rem",
+                  fontSize: "0.72rem",
                   fontWeight: 600,
-                  color: "rgba(255,255,255,0.55)",
+                  color: "rgba(255,255,255,0.4)",
                   letterSpacing: "0.04em",
+                  textTransform: "uppercase",
                 }}
               >
                 {badge}
@@ -177,21 +166,19 @@ export default function Hero() {
             position: "relative",
           }}
         >
-          {/* Glow behind product */}
           <div
             style={{
               position: "absolute",
-              width: "80%",
-              height: "80%",
+              width: "75%",
+              height: "75%",
               borderRadius: "50%",
-              background:
-                "radial-gradient(circle, rgba(255,126,0,0.25) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(245,158,11,0.2) 0%, transparent 70%)",
               filter: "blur(40px)",
             }}
           />
           <Image
             src="/TestosteroneHero1.png"
-            alt="NattyPLUS Testosterone Support"
+            alt="NattyPLUS Ultimate Testosterone Booster"
             width={520}
             height={580}
             style={{
@@ -206,7 +193,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Mobile hero layout fix */}
       <style>{`
         @media (max-width: 767px) {
           .hero-grid {
@@ -214,9 +200,7 @@ export default function Hero() {
             padding-top: 100px !important;
             padding-bottom: 60px !important;
           }
-          .hero-grid > div:last-child {
-            display: none;
-          }
+          .hero-grid > div:last-child { display: none; }
         }
       `}</style>
     </section>

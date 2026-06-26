@@ -26,7 +26,7 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       style={{
-        background: "#272626",
+        background: "#0d0d0f",
         padding: "96px 24px",
         borderTop: "1px solid rgba(255,255,255,0.05)",
       }}
@@ -135,7 +135,7 @@ export default function HowItWorks() {
             <div
               key={stat.label}
               style={{
-                background: "#1e1e1e",
+                background: "#111113",
                 padding: "32px 24px",
                 textAlign: "center",
               }}
@@ -144,7 +144,7 @@ export default function HowItWorks() {
                 style={{
                   fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
                   fontWeight: 900,
-                  color: "#ff7e00",
+                  color: "#f59e0b",
                   letterSpacing: "-0.02em",
                   marginBottom: 6,
                 }}

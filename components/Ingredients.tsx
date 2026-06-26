@@ -2,42 +2,58 @@
 
 import Image from "next/image";
 
+const PRODUCT_URL = "https://nattyplussupps.com/products/ultimate-testosterone-booster";
+
 const ingredients = [
   {
-    name: "KSM-66® Ashwagandha",
-    dose: "600mg",
-    role: "Reduces cortisol by 27%, directly protecting testosterone levels from chronic stress degradation.",
-    tag: "Clinically Studied",
+    name: "Tongkat Ali",
+    role: "Adaptogenic herb that supports hormone balance and lowers cortisol — the #1 testosterone killer. Clinically shown to raise free T levels.",
+    tag: "Adaptogen",
   },
   {
-    name: "Zinc (as Bisglycinate)",
-    dose: "30mg",
-    role: "Essential cofactor in testosterone biosynthesis. Deficiency = lower T. Full stop.",
-    tag: "Essential Mineral",
+    name: "Fadogia Agrestis",
+    role: "West African shrub studied for stimulating LH production — the upstream signal your body needs to make more testosterone.",
+    tag: "T-Signaling",
   },
   {
-    name: "Magnesium Glycinate",
-    dose: "200mg",
-    role: "Binds SHBG, freeing up bound testosterone. Better sleep = better T. Synergistic.",
+    name: "Anacyclus Pyrethrum",
+    role: "Supports testosterone, LH, and FSH levels. Underused by most brands but one of the most targeted T-support herbs in the formula.",
+    tag: "Hormone Support",
+  },
+  {
+    name: "Shilajit",
+    role: "Mineral-rich resin that supports mitochondrial energy and hormonal health. Boosts CoQ10 activity and free testosterone.",
+    tag: "Ancient Mineral",
+  },
+  {
+    name: "Coleus Forskohlii",
+    role: "Contains forskolin, which activates cAMP pathways shown to support free testosterone and lean body composition.",
+    tag: "Body Composition",
+  },
+  {
+    name: "Horny Goat Weed",
+    role: "Supports erectile function and testosterone synthesis. The icariin compound inhibits PDE5, the same enzyme targeted by ED medications.",
+    tag: "Libido + Performance",
+  },
+  {
+    name: "Magnesium Bisglycinate",
+    role: "Highly bioavailable form that binds SHBG, freeing up bound testosterone. Also critical for deep sleep — where T recovery happens.",
     tag: "Bioavailable Form",
   },
   {
-    name: "Vitamin D3",
-    dose: "5,000 IU",
-    role: "Testosterone levels 25% higher in men with optimal D3. Most guys are deficient.",
-    tag: "Sunshine in a capsule",
+    name: "Zinc",
+    role: "Essential cofactor in testosterone biosynthesis. Clinical studies show clear correlation between zinc deficiency and low T. Non-negotiable.",
+    tag: "Essential Mineral",
   },
   {
     name: "Boron",
-    dose: "10mg",
-    role: "Shown to increase free testosterone by 28% in 7 days by reducing SHBG binding.",
-    tag: "Underrated",
+    role: "Shown to increase free testosterone by up to 28% in 7 days by reducing SHBG binding. Criminally underrated ingredient.",
+    tag: "Free T Booster",
   },
   {
-    name: "DIM",
-    dose: "300mg",
-    role: "Routes estrogen toward weaker, less problematic metabolites. Keeps your E:T ratio dialed.",
-    tag: "Anti-Estrogen",
+    name: "Vitamin D3",
+    role: "Studies show testosterone levels are 25% higher in men with optimal D3. Most guys are chronically deficient — especially indoors.",
+    tag: "Essential Vitamin",
   },
 ];
 
@@ -46,9 +62,13 @@ export default function Ingredients() {
     <section
       id="ingredients"
       style={{
-        background: "#1e1e1e",
+        background: "#111113",
         padding: "96px 24px",
         borderTop: "1px solid rgba(255,255,255,0.05)",
+        backgroundImage: "url(/Pattern-2.png)",
+        backgroundSize: "400px",
+        backgroundRepeat: "repeat",
+        backgroundBlendMode: "overlay",
       }}
     >
       <div style={{ maxWidth: 1160, margin: "0 auto" }}>
@@ -62,34 +82,66 @@ export default function Ingredients() {
           className="ingredients-grid"
         >
           {/* Left: product image */}
-          <div style={{ position: "relative" }}>
+          <div style={{ position: "sticky", top: 120 }}>
+            <div style={{ position: "relative" }}>
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  width: 380,
+                  height: 380,
+                  borderRadius: "50%",
+                  background: "radial-gradient(circle, rgba(245,158,11,0.18) 0%, transparent 70%)",
+                  filter: "blur(30px)",
+                }}
+              />
+              <Image
+                src="/NAT_ASHWAGANDA-PROD-IMAGE-1.png"
+                alt="NattyPLUS Ultimate Testosterone Booster"
+                width={480}
+                height={520}
+                style={{
+                  objectFit: "contain",
+                  width: "100%",
+                  height: "auto",
+                  position: "relative",
+                  zIndex: 1,
+                }}
+              />
+            </div>
+
+            {/* Product card under image */}
             <div
               style={{
-                position: "absolute",
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: 380,
-                height: 380,
-                borderRadius: "50%",
-                background:
-                  "radial-gradient(circle, rgba(255,126,0,0.2) 0%, transparent 70%)",
-                filter: "blur(30px)",
+                marginTop: 24,
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: 16,
+                padding: "20px 24px",
               }}
-            />
-            <Image
-              src="/NAT_ASHWAGANDA-PROD-IMAGE-1.png"
-              alt="NattyPLUS Ingredients"
-              width={480}
-              height={520}
-              style={{
-                objectFit: "contain",
-                width: "100%",
-                height: "auto",
-                position: "relative",
-                zIndex: 1,
-              }}
-            />
+            >
+              <div style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>
+                Ultimate Testosterone Booster
+              </div>
+              <div style={{ fontSize: "1.4rem", fontWeight: 900, marginBottom: 4 }}>
+                $129.95 AUD
+              </div>
+              <div style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.45)", marginBottom: 16 }}>
+                Or from $87.07/mo with subscription · Save 33%
+              </div>
+              <a
+                href={PRODUCT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ width: "100%", justifyContent: "center" }}
+              >
+                Shop Now
+                <span className="btn-arrow">→</span>
+              </a>
+            </div>
           </div>
 
           {/* Right: ingredients list */}
@@ -105,9 +157,9 @@ export default function Ingredients() {
                 marginBottom: 12,
               }}
             >
-              ingredients that
+              10 ingredients.
               <br />
-              <span style={{ color: "#ff7e00" }}>actually work</span>
+              <span style={{ color: "#f59e0b" }}>zero filler.</span>
             </h2>
             <p
               style={{
@@ -118,46 +170,45 @@ export default function Ingredients() {
                 maxWidth: 420,
               }}
             >
-              Every ingredient has a reason to be here. Every dose hits the
-              clinical threshold. No watered-down blends hiding behind
-              &quot;proprietary formulas.&quot;
+              Every single ingredient has a peer-reviewed reason to be here.
+              Clinical doses. Transparent label. No proprietary blend hiding
+              what you&apos;re actually putting in your body.
             </p>
 
-            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-              {ingredients.map((ing) => (
+            <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+              {ingredients.map((ing, i) => (
                 <div
                   key={ing.name}
                   style={{
                     display: "flex",
                     gap: 16,
-                    paddingBottom: 20,
+                    padding: "18px 0",
                     borderBottom: "1px solid rgba(255,255,255,0.06)",
                   }}
                 >
-                  {/* Dose badge */}
+                  {/* Number */}
                   <div
                     style={{
                       flexShrink: 0,
-                      background: "rgba(255,126,0,0.1)",
-                      border: "1px solid rgba(255,126,0,0.25)",
-                      borderRadius: 8,
-                      padding: "8px 12px",
-                      textAlign: "center",
-                      minWidth: 68,
+                      width: 32,
+                      height: 32,
+                      borderRadius: "50%",
+                      background: "rgba(245,158,11,0.1)",
+                      border: "1px solid rgba(245,158,11,0.2)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      color: "#f59e0b",
+                      fontFamily: "monospace",
+                      marginTop: 2,
                     }}
                   >
-                    <div
-                      style={{
-                        fontSize: "0.95rem",
-                        fontWeight: 900,
-                        color: "#ff7e00",
-                      }}
-                    >
-                      {ing.dose}
-                    </div>
+                    {String(i + 1).padStart(2, "0")}
                   </div>
 
-                  <div>
+                  <div style={{ flex: 1 }}>
                     <div
                       style={{
                         display: "flex",
@@ -177,18 +228,7 @@ export default function Ingredients() {
                       >
                         {ing.name}
                       </span>
-                      <span
-                        style={{
-                          fontSize: "0.6rem",
-                          fontWeight: 700,
-                          background: "rgba(255,255,255,0.08)",
-                          padding: "2px 8px",
-                          borderRadius: 20,
-                          letterSpacing: "0.06em",
-                          color: "rgba(255,255,255,0.5)",
-                          textTransform: "uppercase",
-                        }}
-                      >
+                      <span className="badge-outline" style={{ fontSize: "0.6rem" }}>
                         {ing.tag}
                       </span>
                     </div>
@@ -197,6 +237,7 @@ export default function Ingredients() {
                         fontSize: "0.82rem",
                         color: "rgba(255,255,255,0.5)",
                         lineHeight: 1.6,
+                        margin: 0,
                       }}
                     >
                       {ing.role}
@@ -207,11 +248,14 @@ export default function Ingredients() {
             </div>
 
             <a
-              href="#shop"
+              href={PRODUCT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary"
               style={{ marginTop: 36, display: "inline-flex" }}
             >
-              Shop Now — Feel the Difference
+              Shop the Full Formula
+              <span className="btn-arrow">→</span>
             </a>
           </div>
         </div>
@@ -223,7 +267,7 @@ export default function Ingredients() {
             grid-template-columns: 1fr !important;
           }
           .ingredients-grid > div:first-child {
-            display: none;
+            position: static !important;
           }
         }
       `}</style>

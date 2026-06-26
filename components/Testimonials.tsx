@@ -54,7 +54,7 @@ export default function Testimonials() {
     <section
       id="reviews"
       style={{
-        background: "#272626",
+        background: "#0d0d0f",
         padding: "96px 24px",
         borderTop: "1px solid rgba(255,255,255,0.05)",
       }}
@@ -123,7 +123,7 @@ export default function Testimonials() {
             <div
               key={r.name}
               style={{
-                background: "#1e1e1e",
+                background: "#111113",
                 border: "1px solid rgba(255,255,255,0.07)",
                 borderRadius: 12,
                 padding: "28px 24px",
@@ -187,7 +187,7 @@ export default function Testimonials() {
                     style={{
                       fontSize: "0.65rem",
                       fontWeight: 700,
-                      color: "#ff7e00",
+                      color: "#f59e0b",
                       letterSpacing: "0.06em",
                       textTransform: "uppercase",
                     }}
@@ -201,7 +201,7 @@ export default function Testimonials() {
         </div>
 
         <div style={{ textAlign: "center", marginTop: 48 }}>
-          <a href="#shop" className="btn-primary">
+          <a href="https://nattyplussupps.com/products/ultimate-testosterone-booster" target="_blank" rel="noopener noreferrer" className="btn-primary">
             Join 50,000+ Men Who Said Enough →
           </a>
         </div>

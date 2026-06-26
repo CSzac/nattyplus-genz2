@@ -27,7 +27,7 @@ export default function ProblemSection() {
   return (
     <section
       style={{
-        background: "#1e1e1e",
+        background: "#111113",
         padding: "96px 24px",
       }}
     >
@@ -72,7 +72,7 @@ export default function ProblemSection() {
             <div
               key={s.title}
               style={{
-                background: "#272626",
+                background: "#0d0d0f",
                 border: "1px solid rgba(255,255,255,0.07)",
                 borderRadius: 12,
                 padding: "32px 24px",
@@ -133,7 +133,7 @@ export default function ProblemSection() {
             }}
           >
             You&apos;re not broken.{" "}
-            <span style={{ color: "#ff7e00" }}>
+            <span style={{ color: "#f59e0b" }}>
               Your hormones are just begging for backup.
             </span>{" "}
             That&apos;s exactly what NattyPLUS was built for.

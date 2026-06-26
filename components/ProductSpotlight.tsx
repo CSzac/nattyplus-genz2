@@ -2,44 +2,59 @@
 
 import Image from "next/image";
 
+const PRODUCT_URL = "https://nattyplussupps.com/products/ultimate-testosterone-booster";
+
 const products = [
   {
-    name: "Testosterone Support",
+    name: "Ultimate Testosterone Booster",
     tagline: "The main character era starts here",
-    price: "$49.99",
-    originalPrice: "$64.99",
+    price: "$129.95 AUD",
+    sub: "From $87.07/mo with subscription",
     image: "/TestosteroneHero1.png",
     badge: "BESTSELLER",
-    badgeBg: "#ff7e00",
-    features: ["Ashwagandha KSM-66®", "Zinc + Magnesium", "Boron", "D3 + K2"],
-    href: "#shop",
+    badgeClass: "badge-outline",
+    discount: "SAVE 33%",
+    features: [
+      "Tongkat Ali + Fadogia Agrestis",
+      "Shilajit + Anacyclus Pyrethrum",
+      "Zinc, Boron, Vitamin D3",
+      "10 clinically-dosed ingredients",
+    ],
+    href: PRODUCT_URL,
   },
   {
-    name: "Estrogen Reduction",
-    tagline: "Less estrogen. More you.",
-    price: "$44.99",
-    originalPrice: "$59.99",
+    name: "Ultimate Estrogen Reduction",
+    tagline: "Keep your E:T ratio dialed",
+    price: "$99.95 AUD",
+    sub: "Highly synergistic with Test Booster",
     image: "/EstrogenReductionHero1.png",
     badge: "FAN FAVORITE",
-    badgeBg: "#272626",
-    features: ["DIM", "Calcium D-Glucarate", "Chrysin", "BioPerine®"],
-    href: "#shop",
+    badgeClass: "badge-outline",
+    discount: null,
+    features: [
+      "DIM + Calcium D-Glucarate",
+      "Manages T-driven estrogen rise",
+      "Transparent label",
+      "Stack with Testosterone Booster",
+    ],
+    href: "https://nattyplussupps.com/products/ultimate-estrogen-reduction",
   },
   {
     name: "Ultimate Men's Bundle",
     tagline: "Stack it. Own it.",
-    price: "$89.99",
-    originalPrice: "$119.99",
+    price: "$199.95 AUD",
+    sub: "Best value — free shipping included",
     image: "/UltimateMensPerformanceBundleHeroRenderv2.png",
     badge: "BEST VALUE",
-    badgeBg: "#272626",
+    badgeClass: "badge-gold",
+    discount: "SAVE 25%",
     features: [
-      "Testosterone Support",
+      "Testosterone Booster",
       "Estrogen Reduction",
-      "Save 25%",
-      "Free Shipping",
+      "Ashwagandha Complex",
+      "Free Travel Support included",
     ],
-    href: "#shop",
+    href: "https://nattyplussupps.com/collections/bundles",
   },
 ];
 
@@ -48,7 +63,7 @@ export default function ProductSpotlight() {
     <section
       id="shop"
       style={{
-        background: "#272626",
+        background: "#0d0d0f",
         padding: "96px 24px",
       }}
     >
@@ -67,11 +82,11 @@ export default function ProductSpotlight() {
           >
             built different.
             <br />
-            <span style={{ color: "#ff7e00" }}>dosed different.</span>
+            <span style={{ color: "#f59e0b" }}>dosed different.</span>
           </h2>
           <p
             style={{
-              color: "rgba(255,255,255,0.55)",
+              color: "rgba(255,255,255,0.5)",
               fontSize: "1rem",
               maxWidth: 500,
               margin: "0 auto",
@@ -87,25 +102,25 @@ export default function ProductSpotlight() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: 28,
+            gap: 20,
           }}
         >
           {products.map((p) => (
             <div
               key={p.name}
               style={{
-                background: "#1e1e1e",
+                background: "#161616",
                 border: "1px solid rgba(255,255,255,0.07)",
                 borderRadius: 16,
                 overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
-                transition: "transform 0.2s, box-shadow 0.2s",
+                transition: "transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease",
               }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget;
                 el.style.transform = "translateY(-6px)";
-                el.style.boxShadow = "0 24px 64px rgba(0,0,0,0.4)";
+                el.style.boxShadow = "0 24px 64px rgba(0,0,0,0.5)";
               }}
               onMouseLeave={(e) => {
                 const el = e.currentTarget;
@@ -113,40 +128,38 @@ export default function ProductSpotlight() {
                 el.style.boxShadow = "none";
               }}
             >
-              {/* Badge */}
+              {/* Image area */}
               <div style={{ position: "relative" }}>
+                {/* Badges */}
                 <div
                   style={{
                     position: "absolute",
-                    top: 16,
-                    left: 16,
+                    top: 14,
+                    left: 14,
+                    right: 14,
                     zIndex: 2,
-                    background: p.badgeBg,
-                    border:
-                      p.badgeBg === "#272626"
-                        ? "1px solid rgba(255,255,255,0.2)"
-                        : "none",
-                    borderRadius: 4,
-                    padding: "4px 10px",
-                    fontSize: "0.65rem",
-                    fontWeight: 800,
-                    letterSpacing: "0.1em",
-                    color: "#fff",
-                    textTransform: "uppercase",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
                   }}
                 >
-                  {p.badge}
+                  <span className={p.badgeClass} style={{ fontSize: "0.62rem" }}>
+                    {p.badge}
+                  </span>
+                  {p.discount && (
+                    <span className="badge-gold" style={{ fontSize: "0.62rem" }}>
+                      {p.discount}
+                    </span>
+                  )}
                 </div>
 
-                {/* Product image */}
                 <div
                   style={{
-                    background:
-                      "linear-gradient(180deg, #2d2c2c 0%, #1e1e1e 100%)",
+                    background: "linear-gradient(180deg, #1e1e20 0%, #161616 100%)",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    padding: "32px 24px",
+                    padding: "48px 24px 32px",
                     minHeight: 280,
                   }}
                 >
@@ -155,83 +168,78 @@ export default function ProductSpotlight() {
                     alt={p.name}
                     width={220}
                     height={260}
-                    style={{ objectFit: "contain", maxHeight: 240 }}
+                    style={{
+                      objectFit: "contain",
+                      maxHeight: 240,
+                      transition: "transform 0.4s cubic-bezier(0.22,1,0.36,1)",
+                    }}
+                    className="product-img"
                   />
                 </div>
               </div>
 
               {/* Content */}
-              <div style={{ padding: "24px", flex: 1, display: "flex", flexDirection: "column" }}>
+              <div style={{ padding: "20px 20px 24px", flex: 1, display: "flex", flexDirection: "column" }}>
                 <p
                   style={{
-                    fontSize: "0.72rem",
+                    fontSize: "0.7rem",
                     fontWeight: 600,
-                    color: "#ff7e00",
+                    color: "#f59e0b",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
-                    marginBottom: 6,
+                    marginBottom: 4,
                   }}
                 >
                   {p.tagline}
                 </p>
                 <h3
                   style={{
-                    fontSize: "1.15rem",
+                    fontSize: "1rem",
                     fontWeight: 800,
                     textTransform: "uppercase",
                     letterSpacing: "0.02em",
-                    marginBottom: 16,
+                    marginBottom: 14,
+                    lineHeight: 1.3,
                   }}
                 >
                   {p.name}
                 </h3>
 
-                {/* Feature list */}
-                <ul style={{ marginBottom: 24, display: "flex", flexDirection: "column", gap: 6, flex: 1 }}>
+                <ul style={{ marginBottom: 20, display: "flex", flexDirection: "column", gap: 5, flex: 1 }}>
                   {p.features.map((f) => (
                     <li
                       key={f}
                       style={{
-                        fontSize: "0.82rem",
-                        color: "rgba(255,255,255,0.6)",
+                        fontSize: "0.8rem",
+                        color: "rgba(255,255,255,0.55)",
                         display: "flex",
-                        alignItems: "center",
+                        alignItems: "flex-start",
                         gap: 8,
                       }}
                     >
-                      <span style={{ color: "#ff7e00", fontWeight: 700 }}>
-                        ✓
-                      </span>
+                      <span style={{ color: "#f59e0b", fontWeight: 700, flexShrink: 0 }}>✓</span>
                       {f}
                     </li>
                   ))}
                 </ul>
 
                 {/* Price + CTA */}
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <div>
-                    <span
-                      style={{
-                        fontSize: "1.4rem",
-                        fontWeight: 900,
-                        color: "#ffffff",
-                      }}
-                    >
-                      {p.price}
-                    </span>
-                    <span
-                      style={{
-                        fontSize: "0.85rem",
-                        color: "rgba(255,255,255,0.35)",
-                        textDecoration: "line-through",
-                        marginLeft: 8,
-                      }}
-                    >
-                      {p.originalPrice}
-                    </span>
+                <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 16 }}>
+                  <div style={{ marginBottom: 12 }}>
+                    <span style={{ fontSize: "1.2rem", fontWeight: 900 }}>{p.price}</span>
+                    <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.35)", marginTop: 2 }}>
+                      {p.sub}
+                    </p>
                   </div>
-                  <a href={p.href} className="btn-primary" style={{ padding: "10px 20px", fontSize: "0.75rem" }}>
-                    Add to Cart
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary"
+                    style={{ width: "100%", justifyContent: "center" }}
+                  >
+                    Shop Now
+                    <span className="btn-arrow">→</span>
                   </a>
                 </div>
               </div>
@@ -242,20 +250,20 @@ export default function ProductSpotlight() {
         {/* Guarantee strip */}
         <div
           style={{
-            marginTop: 48,
+            marginTop: 40,
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
-            gap: 32,
-            padding: "24px",
-            background: "#1e1e1e",
+            gap: 28,
+            padding: "20px 24px",
+            background: "#161616",
             borderRadius: 12,
-            border: "1px solid rgba(255,255,255,0.06)",
+            border: "1px solid rgba(255,255,255,0.05)",
           }}
         >
           {[
-            ["🛡️", "30-Day Money Back"],
-            ["📦", "Free US Shipping $80+"],
+            ["🛡️", "30-Day Results Guarantee"],
+            ["📦", "Free Shipping $200+ AUD"],
             ["🔬", "Third-Party Tested"],
             ["💳", "Secure Checkout"],
           ].map(([icon, label]) => (
@@ -265,19 +273,23 @@ export default function ProductSpotlight() {
                 display: "flex",
                 alignItems: "center",
                 gap: 8,
-                fontSize: "0.8rem",
+                fontSize: "0.75rem",
                 fontWeight: 600,
-                color: "rgba(255,255,255,0.6)",
+                color: "rgba(255,255,255,0.45)",
                 textTransform: "uppercase",
                 letterSpacing: "0.05em",
               }}
             >
-              <span style={{ fontSize: "1.1rem" }}>{icon}</span>
+              <span style={{ fontSize: "1rem" }}>{icon}</span>
               {label}
             </div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        .product-img:hover { transform: scale(1.08); }
+      `}</style>
     </section>
   );
 }
